@@ -477,7 +477,6 @@ export function PresetOptions({
               onRacePreset={onRacePreset}
               isRaceSelected={isRaceSelected}
               onGPXSuccess={handleGPXSuccess}
-              currentDistanceUnit={currentDistanceUnit} // Pass current unit
             />
 
             {/* Sticky Done Button */}
