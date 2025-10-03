@@ -444,11 +444,10 @@ export function PresetOptions({
                   </div>
                 )}
 
-                {pacingStrategy === 'even-effort' && calcMode == 'pace' && (
+                {pacingStrategy === 'even-pace' && calcMode == 'pace' && (
                   <div style={styles.gapNote}>
-                    <strong>About Grade Adjusted Pace:</strong> This approach
-                    helps maintain consistent physiological effort across
-                    elevation changes. Learn more about{' '}
+                    GAP estimates your equivalent pace on flat ground for the
+                    same effort. Learn more about{' '}
                     <a
                       href="https://pubmed.ncbi.nlm.nih.gov/12183501/"
                       target="_blank"
@@ -468,6 +467,13 @@ export function PresetOptions({
                     </a>
                     . Use at your own risk and defer to professional pacers when
                     available.
+                  </div>
+                )}
+                {pacingStrategy === 'even-effort' && calcMode == 'pace' && (
+                  <div style={styles.gapNote}>
+                    This strategy helps maintain consistent physiological effort
+                    across elevation changes. Use at your own risk and defer to
+                    professional pacers when available.
                   </div>
                 )}
               </div>

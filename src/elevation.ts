@@ -122,12 +122,12 @@ export function getElevationAtDistance(
 }
 
 // Calculate Grade Adjusted Pace (GAP) using Minetti 2002 research
-// Based on metabolic cost of running at different grades
+// GAP shows what your equivalent pace would be on flat ground for the same effort
 export function calculateGradeAdjustedPace(
-  basePaceSeconds: number,
+  actualPaceSeconds: number,
   gradePercent: number
 ): number {
-  if (Math.abs(gradePercent) < 0.1) return basePaceSeconds // Flat terrain
+  if (Math.abs(gradePercent) < 0.1) return actualPaceSeconds // Flat terrain
 
   // Convert percentage to decimal for Minetti formula
   const gradeDecimal = gradePercent / 100
@@ -139,7 +139,10 @@ export function calculateGradeAdjustedPace(
   // Adjustment factor based on relative metabolic cost
   const adjustmentFactor = gradeCost / levelCost
 
-  return basePaceSeconds * adjustmentFactor
+  // GAP = actual pace divided by effort multiplier
+  // Uphill: higher effort, so GAP is faster (lower time) than actual pace
+  // Downhill: lower effort, so GAP is slower (higher time) than actual pace
+  return actualPaceSeconds / adjustmentFactor
 }
 
 // Calculate what actual pace is needed to achieve a target Grade Adjusted Pace
