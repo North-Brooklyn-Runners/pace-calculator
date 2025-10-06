@@ -444,6 +444,7 @@ export default function App() {
             paceStr={paceStr}
             goalTimeStr={goalTimeStr}
             paceUnit={paceUnit}
+            pacingStrategy={pacingStrategy}
           />
         </div>
 

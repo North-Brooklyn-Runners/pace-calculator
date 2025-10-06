@@ -15,6 +15,8 @@ interface ResultCardProps {
   paceStr: string
   goalTimeStr: string
   paceUnit: Unit
+  // Add pacing strategy prop
+  pacingStrategy?: 'even-pace' | 'even-effort'
 }
 
 export function ResultCard({
@@ -29,6 +31,7 @@ export function ResultCard({
   paceStr,
   goalTimeStr,
   paceUnit,
+  pacingStrategy = 'even-pace',
 }: ResultCardProps) {
   return (
     <>
@@ -47,7 +50,11 @@ export function ResultCard({
             : formatHMS(targetPaceSec)}
         </div>
         <div style={styles.resultLabel}>
-          {calcMode === 'time' ? 'Total Time' : 'Target Pace'}
+          {calcMode === 'time'
+            ? 'Total Time'
+            : pacingStrategy === 'even-effort'
+            ? 'Target Effort'
+            : 'Target Pace'}
         </div>
       </div>
     </>

@@ -247,6 +247,8 @@ export function PresetOptions({
     }, 150) // Slightly longer delay for race selection
   }
 
+  const shouldShowPacingStrategyNote = raceProfile && calcMode === 'pace'
+
   return (
     <div style={styles.moreOptionsSection}>
       <button
@@ -444,38 +446,40 @@ export function PresetOptions({
                   </div>
                 )}
 
-                {pacingStrategy === 'even-pace' && calcMode == 'pace' && (
-                  <div style={styles.gapNote}>
-                    GAP estimates your equivalent pace on flat ground for the
-                    same effort. Learn more about{' '}
-                    <a
-                      href="https://pubmed.ncbi.nlm.nih.gov/12183501/"
-                      target="_blank"
-                      rel="noopener"
-                      style={styles.link}
-                    >
-                      running energetics research
-                    </a>{' '}
-                    and{' '}
-                    <a
-                      href="https://medium.com/strava-engineering/an-improved-gap-model-8b07ae8886c3"
-                      target="_blank"
-                      rel="noopener"
-                      style={styles.link}
-                    >
-                      Strava's GAP approach
-                    </a>
-                    . Use at your own risk and defer to professional pacers when
-                    available.
-                  </div>
-                )}
-                {pacingStrategy === 'even-effort' && calcMode == 'pace' && (
-                  <div style={styles.gapNote}>
-                    This strategy helps maintain consistent physiological effort
-                    across elevation changes. Use at your own risk and defer to
-                    professional pacers when available.
-                  </div>
-                )}
+                {shouldShowPacingStrategyNote &&
+                  pacingStrategy === 'even-pace' && (
+                    <div style={styles.gapNote}>
+                      GAP estimates your equivalent pace on flat ground for the
+                      same effort. Learn more about{' '}
+                      <a
+                        href="https://pubmed.ncbi.nlm.nih.gov/12183501/"
+                        target="_blank"
+                        rel="noopener"
+                        style={styles.link}
+                      >
+                        running energetics research
+                      </a>{' '}
+                      and{' '}
+                      <a
+                        href="https://medium.com/strava-engineering/an-improved-gap-model-8b07ae8886c3"
+                        target="_blank"
+                        rel="noopener"
+                        style={styles.link}
+                      >
+                        Strava's GAP approach
+                      </a>
+                      . Use at your own risk and defer to professional pacers
+                      when available.
+                    </div>
+                  )}
+                {shouldShowPacingStrategyNote &&
+                  pacingStrategy === 'even-effort' && (
+                    <div style={styles.gapNote}>
+                      This strategy helps maintain consistent physiological
+                      effort across elevation changes. Use at your own risk and
+                      defer to professional pacers when available.
+                    </div>
+                  )}
               </div>
             )}
             {/* Race Presets */}
