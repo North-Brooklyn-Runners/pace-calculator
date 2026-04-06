@@ -7,6 +7,8 @@ import {
   TOKYO_MARATHON_ELEVATION,
   SYDNEY_MARATHON_ELEVATION,
   UNITED_NYC_HALF_ELEVATION,
+  SF_MARATHON_ELEVATION,
+  NYC_RUNS_BROOKLYN_HALF_ELEVATION,
 } from './assets/elevationData'
 import { RaceProfile, ElevationPoint } from './types'
 import { minetti2002CostOfRunning } from './utils/common'
@@ -29,6 +31,15 @@ export const RACE_PROFILES: Record<string, RaceProfile> = {
     logoUrl:
       'https://raceraves.com/wp-content/uploads/2022/09/uanych18_4p_primary_logo_nodate_rgb_full_color300x300.png',
     gpxUrl: 'https://www.strava.com/routes/3334559585706062360',
+  },
+  'nyc-runs-brooklyn-half': {
+    name: 'NYC Runs Brooklyn Half Marathon',
+    distance: 13.1,
+    unit: 'mi',
+    elevationProfile: NYC_RUNS_BROOKLYN_HALF_ELEVATION,
+    logoUrl:
+      'https://fast.nycruns.com/web/2026/01/NYCRUNS_2026_BKXHM_logo_digital_date_cropped_v2-1-1-1024x901.png',
+    gpxUrl: 'https://www.strava.com/routes/3345076208791072182',
   },
   'nyc-marathon': {
     name: 'NYC Marathon',
@@ -75,6 +86,15 @@ export const RACE_PROFILES: Record<string, RaceProfile> = {
       'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Tokyo_Marathon_logo.svg/1280px-Tokyo_Marathon_logo.svg.png',
     gpxUrl: 'https://www.strava.com/routes/3408692524761307238', // You can populate this with the Strava route or GPX file URL
   }, // 2007
+  'sf-marathon': {
+    name: 'San Francisco Marathon',
+    distance: 26.2,
+    unit: 'mi',
+    elevationProfile: SF_MARATHON_ELEVATION,
+    logoUrl:
+      'https://thesfmarathon.com/wp-content/uploads/2023/04/The-San-Francisco-Marathon.png',
+    gpxUrl: 'https://www.strava.com/routes/3238916227111550184',
+  },
   'sydney-marathon': {
     name: 'Sydney Marathon',
     distance: 26.2,

@@ -9,6 +9,8 @@ import berlinMarathonData from './berlinMarathon.json'
 import tokyoMarathonData from './tokyoMarathon.json'
 import sydneyMarathonData from './sydneyMarathon.json'
 import unitedNycHalfData from './nycHalf.json'
+import sanfranciscoMarathonData from './sanfranciscoMarathon.json'
+import nycRunsBrooklynHalfData from './nycRunsBrookylHalf.json'
 
 // Conversion constant
 const METERS_TO_FEET = 3.28084
@@ -29,3 +31,6 @@ export const BERLIN_MARATHON_ELEVATION: ElevationPoint[] = berlinMarathonData
 export const TOKYO_MARATHON_ELEVATION: ElevationPoint[] = tokyoMarathonData
 export const SYDNEY_MARATHON_ELEVATION: ElevationPoint[] = sydneyMarathonData
 export const UNITED_NYC_HALF_ELEVATION: ElevationPoint[] = unitedNycHalfData
+export const SF_MARATHON_ELEVATION: ElevationPoint[] = sanfranciscoMarathonData
+export const NYC_RUNS_BROOKLYN_HALF_ELEVATION: ElevationPoint[] =
+  nycRunsBrooklynHalfData
