@@ -9,6 +9,7 @@ import {
   UNITED_NYC_HALF_ELEVATION,
   SF_MARATHON_ELEVATION,
   NYC_RUNS_BROOKLYN_HALF_ELEVATION,
+  RBC_BK_HALF_ELEVATION,
 } from './assets/elevationData'
 import { RaceProfile, ElevationPoint } from './types'
 import { minetti2002CostOfRunning } from './utils/common'
@@ -40,6 +41,15 @@ export const RACE_PROFILES: Record<string, RaceProfile> = {
     logoUrl:
       'https://fast.nycruns.com/web/2026/01/NYCRUNS_2026_BKXHM_logo_digital_date_cropped_v2-1-1-1024x901.png',
     gpxUrl: 'https://www.strava.com/routes/3345076208791072182',
+  },
+  'rbc-brooklyn-half': {
+    name: 'RBC Brooklyn Half Marathon',
+    distance: 13.1,
+    unit: 'mi',
+    elevationProfile: RBC_BK_HALF_ELEVATION,
+    logoUrl:
+      'https://s3.amazonaws.com/hakuapps/prod/be052e5e5e3cddf22b048cf2566177d51b28fd2a.jpg',
+    gpxUrl: 'https://www.strava.com/routes/3217277170328710644',
   },
   'nyc-marathon': {
     name: 'NYC Marathon',

@@ -50,6 +50,16 @@ The resulting HTML file is completely self-contained and can be:
 
 Note that is has some funky margins to account for the NBR Squarespace styling.
 
+## Elevation Data
+
+Elevation profiles are extracted from GPX files using the script in `../gpx/`:
+
+```bash
+python extract_elevations.py <input_gpx> 150 --outdir output
+```
+
+Copy the resulting JSON into `src/assets/` and register it in `src/assets/elevationData.ts` and `src/elevation.ts`.
+
 ## Project Structure
 
 ```
